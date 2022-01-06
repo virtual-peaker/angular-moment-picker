@@ -158,7 +158,7 @@ export default class Directive implements ng.IDirective {
 
 					$scope.isOpen = true;
 					$scope.view.isOpen = true;
-					document.body.appendChild($scope.picker[0]);
+					document.querySelector('angular-middle-panel').shadowRoot.getElementById('vp-app').appendChild($scope.picker[0]);
 					$scope.view.position();
 				},
 				close: () => {
