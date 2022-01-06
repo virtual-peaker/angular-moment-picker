@@ -5,7 +5,7 @@
   "main": "dist/angular-moment-picker.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/indrimuska/angular-moment-picker.git"
+    "url": "git+https://github.com/virtual-peaker/angular-moment-picker.git"
   },
   "keywords": [
     "datepicker",
