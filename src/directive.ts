@@ -183,8 +183,8 @@ export default class Directive implements ng.IDirective {
 						winHeight = this.$window.innerHeight,
 						shouldHaveClassTop = top + this.$window.pageYOffset - picker.offsetHeight > 0 && top > winHeight / 2,
 						shouldHaveClassRight = left + picker.offsetWidth > winWidth,
-						pickerTop = offset.top + (shouldHaveClassTop ? 0 : element.offsetHeight) + 'px',
-						pickerLeft = offset.left + 'px',
+						pickerTop = offset.top - 59 + (shouldHaveClassTop ? 0 : element.offsetHeight) + 'px',
+						pickerLeft = offset.left - 122 + 'px',
 						pickerWidth = element.offsetWidth + 'px';
 
 					if (!hasClassTop && shouldHaveClassTop) $scope.picker.addClass('top');

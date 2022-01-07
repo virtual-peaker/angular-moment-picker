@@ -13,7 +13,7 @@ export const getOffset = (element: HTMLElement): { top: number, left: number } =
 	if (!rect.width && !rect.height) return rect;
 	
 	let doc: Document        = element.ownerDocument;
-	let win: Window          = getWindow(doc.activeElement);
+	let win: Window          = getWindow(doc);
 	let docElem: HTMLElement = doc.documentElement;
 
 	return {
