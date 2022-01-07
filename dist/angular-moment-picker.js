@@ -679,11 +679,11 @@ exports.getOffset = function (element) {
     if (!rect.width && !rect.height)
         return rect;
     var doc = element.ownerDocument;
-    var win = getWindow(doc);
+    var win = getWindow(doc.activeElement);
     var docElem = doc.documentElement;
     return {
-        top: rect.top + 59 + win.pageYOffset - docElem.clientTop,
-        left: rect.left + 122 + win.pageXOffset - docElem.clientLeft
+        top: rect.top + win.pageYOffset - docElem.clientTop,
+        left: rect.left + win.pageXOffset - docElem.clientLeft
     };
 };
 

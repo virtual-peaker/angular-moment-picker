@@ -13,11 +13,11 @@ export const getOffset = (element: HTMLElement): { top: number, left: number } =
 	if (!rect.width && !rect.height) return rect;
 	
 	let doc: Document        = element.ownerDocument;
-	let win: Window          = getWindow(doc);
+	let win: Window          = getWindow(doc.activeElement);
 	let docElem: HTMLElement = doc.documentElement;
 
 	return {
-		top: rect.top + 59 + win.pageYOffset - docElem.clientTop,
-		left: rect.left + 122 + win.pageXOffset - docElem.clientLeft
+		top: rect.top + win.pageYOffset - docElem.clientTop,
+		left: rect.left + win.pageXOffset - docElem.clientLeft
 	};
 };
