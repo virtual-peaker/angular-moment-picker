@@ -385,7 +385,7 @@ var Directive = /** @class */ (function () {
                     position: function () {
                         if (!$scope.view.isOpen || $scope.position || $scope.inline)
                             return;
-                        var element = $element[0], picker = $scope.picker.children()[0], hasClassTop = $scope.picker.hasClass('top'), hasClassRight = $scope.picker.hasClass('right'), offset = helpers_1.getOffset($element[0]), top = offset.top - _this.$window.pageYOffset, left = offset.left - _this.$window.pageXOffset, winWidth = _this.$window.innerWidth, winHeight = _this.$window.innerHeight, shouldHaveClassTop = top + _this.$window.pageYOffset - picker.offsetHeight > 0 && top > winHeight / 2, shouldHaveClassRight = left + picker.offsetWidth > winWidth, pickerTop = offset.top + (shouldHaveClassTop ? 0 : element.offsetHeight) - 59 + 'px', pickerLeft = offset.left - 122 + 'px', pickerWidth = element.offsetWidth + 'px';
+                        var element = $element[0], picker = $scope.picker.children()[0], hasClassTop = $scope.picker.hasClass('top'), hasClassRight = $scope.picker.hasClass('right'), offset = helpers_1.getOffset($element[0]), top = offset.top - _this.$window.pageYOffset, left = offset.left - _this.$window.pageXOffset, winWidth = _this.$window.innerWidth, winHeight = _this.$window.innerHeight, shouldHaveClassTop = top + _this.$window.pageYOffset - picker.offsetHeight > 0 && top > winHeight / 2, shouldHaveClassRight = left + picker.offsetWidth > winWidth, pickerTop = offset.top + (shouldHaveClassTop ? 0 : element.offsetHeight) + 'px', pickerLeft = offset.left + 'px', pickerWidth = element.offsetWidth + 'px';
                         if (!hasClassTop && shouldHaveClassTop)
                             $scope.picker.addClass('top');
                         if (hasClassTop && !shouldHaveClassTop)
@@ -682,8 +682,8 @@ exports.getOffset = function (element) {
     var win = getWindow(doc);
     var docElem = doc.documentElement;
     return {
-        top: rect.top + win.pageYOffset - docElem.clientTop,
-        left: rect.left + win.pageXOffset - docElem.clientLeft
+        top: rect.top + 59 + win.pageYOffset - docElem.clientTop,
+        left: rect.left + 122 + win.pageXOffset - docElem.clientLeft
     };
 };
 

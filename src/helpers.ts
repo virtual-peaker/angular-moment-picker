@@ -17,7 +17,7 @@ export const getOffset = (element: HTMLElement): { top: number, left: number } =
 	let docElem: HTMLElement = doc.documentElement;
 
 	return {
-		top: rect.top + win.pageYOffset - docElem.clientTop,
-		left: rect.left + win.pageXOffset - docElem.clientLeft
+		top: rect.top + 59 + win.pageYOffset - docElem.clientTop,
+		left: rect.left + 122 + win.pageXOffset - docElem.clientLeft
 	};
 };
